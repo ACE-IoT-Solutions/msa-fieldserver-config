@@ -1,0 +1,51 @@
+[project]
+name = "msa-fieldserver-config"
+version = "0.1.0"
+description = "Download configuration and usage statistics from Sierra Monitor / MSA FieldServer BACnet gateways"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.1",
+    "rich>=14.2.0",
+    "typer>=0.27.0",
+]
+
+[project.scripts]
+msa-fieldserver = "msa_fieldserver_config.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/msa_fieldserver_config"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.1",
+    "pyrefly>=1.1.1",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.0.0",
+    "respx>=0.22.0",
+    "ruff>=0.15.15",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "PTH"]
+
+[tool.pyrefly]
+project-includes = ["src/**/*", "tests/**/*"]
+project-excludes = ["**/.venv/**/*"]
+# "." so the `tests` package (and its relative conftest import) resolves.
+search-path = ["src", "."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

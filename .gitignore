@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Tool output (downloaded FieldServer configs — may contain site details)
+out/
+
+# Internal-only: agent/contributor conventions referencing internal
+# infrastructure, and design plans citing real device and site identifiers.
+CLAUDE.md
+AGENTS.md
+docs/plans/
