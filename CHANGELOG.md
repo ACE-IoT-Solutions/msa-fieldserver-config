@@ -39,6 +39,9 @@ Initial release.
   for ~75s, and on repetition forces the unit into Recovery Mode.
 
 - MIT license.
+- Supports Python 3.10+ (verified on 3.10 through 3.13), rather than 3.13 only.
+  Only two constructs required 3.11 — `typing.Self` and `datetime.UTC` — and
+  both had direct pre-3.11 equivalents.
 
 ### Notes
 

@@ -13,7 +13,7 @@ separated out here rather than downstream.
 from __future__ import annotations
 
 from collections.abc import Callable
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from typing import Any, TypeVar
 
 from .client import FieldServerClient, FieldServerError
@@ -43,7 +43,8 @@ _ROUTER_DB_PATHS = ("Ports", "Device", "Settings", "Network")
 
 
 def _now() -> datetime:
-    return datetime.now(UTC)
+    # timezone.utc rather than datetime.UTC, which is 3.11+.
+    return datetime.now(timezone.utc)
 
 
 class _Collector:

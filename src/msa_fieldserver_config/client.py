@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import time
 from types import TracebackType
-from typing import Any, Self
+from typing import Any
 
 import httpx
 
@@ -181,7 +181,8 @@ class FieldServerClient:
     # lifecycle
     # ------------------------------------------------------------------ #
 
-    def __enter__(self) -> Self:
+    # Annotated with the concrete class rather than typing.Self, which is 3.11+.
+    def __enter__(self) -> FieldServerClient:
         return self
 
     def __exit__(

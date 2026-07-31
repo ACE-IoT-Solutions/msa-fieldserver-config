@@ -13,7 +13,11 @@ uv sync                     # development
 uv tool install .           # as a CLI on your PATH
 ```
 
-Requires Python 3.13.
+Requires **Python 3.10 or newer**. The test suite is verified on 3.10, 3.11,
+3.12 and 3.13; development happens on 3.13 (`.python-version`).
+
+If you change the floor, move `[tool.ruff] target-version` with it — otherwise
+ruff's `UP` rules rewrite code into syntax the floor doesn't support.
 
 ## Credentials
 

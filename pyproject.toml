@@ -3,7 +3,7 @@ name = "msa-fieldserver-config"
 version = "0.1.0"
 description = "Download configuration and usage statistics from Sierra Monitor / MSA FieldServer BACnet gateways"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 dependencies = [
@@ -37,7 +37,10 @@ dev = [
 
 [tool.ruff]
 line-length = 100
-target-version = "py313"
+# Must track requires-python: with a higher target, the UP rules "modernise"
+# code straight back into 3.11+ syntax (typing.Self, datetime.UTC) and break
+# the floor.
+target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "PTH"]
