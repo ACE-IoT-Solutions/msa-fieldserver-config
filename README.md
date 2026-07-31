@@ -229,3 +229,11 @@ The mesh exposes 34 components; `msa-fieldserver probe` is the quickest way to
 see what a given device and account actually allow. Destructive methods
 (`pe.postConfig`, `pe.restart`, `smcNetwork.setNetworkSettings`) sit right next
 to the read methods on the same components, so add wrappers deliberately.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+Not affiliated with or endorsed by MSA Safety or Sierra Monitor. "FieldServer"
+is their trademark; this is an independent client built by observing a device's
+own web interface.

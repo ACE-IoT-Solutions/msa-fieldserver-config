@@ -38,6 +38,8 @@ Initial release.
   return an error — it crashes the device's protocol engine, 502s every endpoint
   for ~75s, and on repetition forces the unit into Recovery Mode.
 
+- MIT license.
+
 ### Notes
 
 Verified against a live MSA Safety BACnet Router, firmware 8.0.1. Protocol

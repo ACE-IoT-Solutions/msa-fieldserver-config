@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Download configuration and usage statistics from Sierra Monitor / MSA FieldServer BACnet gateways"
 readme = "README.md"
 requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
 dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.13.4",
